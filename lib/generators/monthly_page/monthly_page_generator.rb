@@ -10,9 +10,9 @@ class MonthlyPageGenerator < Rails::Generators::NamedBase
 
   def copy_service_test_file
     if options.test_suite == 'rspec'
-      template 'service_spec.rb', "spec/services/#{file_name}_spec.rb"
+      template 'monthly_page_spec.rb', "spec/monthly_page/#{file_name}_spec.rb"
     elsif options.test_suite == 'minitest'
-      template 'service_test.rb', "test/services/#{file_name}_test.rb"
+      template 'monthly_page_test.rb', "test/monthly_page/#{file_name}_test.rb"
     end
   end
 
