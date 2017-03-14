@@ -8,6 +8,11 @@ class MonthlyPageGenerator < Rails::Generators::NamedBase
 
   def copy_monthly_page_file
     template 'monthly_page.rb', "app/#{DESTINATION_PATH}/#{file_name}.rb"
+    
+    migration_file_name = ""
+    migration_class_name = ""
+    
+    template 'monthly_page_migration.rb' "db/migrate/20170119173334_create_page2017_m1s.rb"
   end
 
   def copy_service_test_file
